@@ -1,39 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <script defer src="./js/script.js"></script>
+  </head>
+  <body>
+    <header class="flex z-10">
+      <!-- NavMenu-->
+      <nav class="w-full h-14 bg-violet-400 items-center text-black pt-2">
+        <!-- NavMenu Container-->
+        <div class="flex mx-auto px-0 md:flex items-center justify-between gap-6">
+          <!-- Navbar: logo and NavMenu-->
+          <div class="h-full  flex">
+            <div class="w-full flex items-center justify-between md:flex-row md:w-auto">
+              <!-- Logo-->
+              <a href="#" class="mt-2  ml-4"><img src="assets/images/logo.svg" alt="logo" /></a>
+            </div>
+            <!-- Primary Navigation -->
+            <div
+              class="hidden w-full h-80  md:h-auto md:w-auto md:flex mt-14 md:flex-row flex-col absolute mx-auto items-center justify-start md:space-x-1 pb-0 md:mb-2 md:ml-28 md:mt-0 navigation-menu bg-violet-400"
+            >
+              <!-- Dropdown Menu 1-->
+              <div class="relative">
+                <button
+                  type="button"
+                  class="w-full dropdown-toggle py-2 px-3 bg-violet-400 hover:bg-slate-600 hover:text-white flex items-center justify-center gap-2 mx-auto"
+                >
+                  <span class="pointer-events-none select-none">Services</span>
+                  <svg
+                    class="w-3 h-3 pointer-events-none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <div class="dropdown-menu absolute hidden z-30 bg-slate-400 text-white rounded-b-lg pb-2 w-auto">
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600 hover:text-white">Todo List</a>
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600 hover:text-white">Calendar</a>
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600 hover:text-white">Remainders</a>
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600 hover:text-white">Planning</a>
+                </div>
+              </div>
+              <!-- Dropdown Menu 2 -->
+              <div class="relative">
+                <button
+                  type="button"
+                  class="w-full dropdown-toggle py-2 px-3 bg-violet-400 hover:bg-slate-600 hover:text-white flex items-center justify-center gap-2 mx-auto"
+                >
+                  <span class="pointer-events-none select-none">Company</span
+                  ><!-- ❓pointer-events-none  makes sure the span can be clicked but it doesn't make sense because it says "none" and also "select-none" which probably prevent selecting the text "Company"-->
+                  <svg
+                    class="w-3 h-3 pointer-events-none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <div class="dropdown-menu absolute bg-slate-400 text-white rounded-b-lg pb-2 w-auto">
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600">History</a>
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600">Our Team</a>
+                  <a href="#" class="block px-4 py-2 bg-slate-400 hover:bg-slate-600">Blog</a>
+                </div>
+              </div>
+              <a href="#" class="py-2 px-3 block bg-violet-400 hover:bg-slate-600 hover:text-white mx-auto text-center">Careers</a>
+              <a href="#" class="py-2 px-3 block bg-violet-400 hover:bg-slate-600 hover:text-white mx-auto text-center">About</a>
+              <!-- Login and Register Buttons-->
+              <div class="w-full h-8 flex-col items-center mt-8 md:hidden">
+                <a href="#" class="h-10 px-3 pt-1.5 block bg-violet-400 hover:bg-slate-600 hover:text-white mx-auto text-center">Login</a>
+                <button type="button" class="w-full h-8 mt-2 flex bg-violet-400">
+                  <a
+                    href="#"
+                    class="p-1 px-3 pb-1 text-black hover:text-white border-black border-4 border-solid rounded-full font-semibold baseline hover:bg-slate-600 mx-auto"
+                    >Learn more</a
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Login and Register Buttons-->
+          <div class="w-48 h-8 items-start justify-around hidden md:flex mr-4">
+            <a href="#" class="h-10 px-3 pt-1.5 block bg-violet-400 hover:bg-slate-600 hover:text-white mx-auto text-center">Login</a>
+            <button type="button" class="w-34 h-2 flex">
+              <a
+                href="#"
+                class="p-1 px-3 pb-1 text-black hover:text-white border-black border-2 border-solid rounded-full font-semibold baseline hover:bg-slate-600"
+                >Learn more</a
+              >
+            </button>
+          </div>
+          <!-- Mobile Hamburger Menu Button -->
+          <div class="md:hidden flex mr-4 items-center">
+            <button type="button" class="mobile-menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <!-- Flex Container -->
+        <div class="container flex flex-col-reverse items-center md:justify-between px-6 mx-auto mt-10 space-y-0 md:flex-row md:space-y-0">
+          <!-- Left Item-->
+          <div class="flex flex-col mb-32 space-y-12 md:w-1/2 m-24">
+            <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl font-BeVietnamPro md:text-left">Make remote work</h1>
+            <p class="max-w-sm text-center text-neutral-Dark-Grayish-Blue md:text-left">
+              Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
+            </p>
+            <button type="button" class="flex justify-center md:justify-start">
+              <a href="#" class="p-3 px-6 pt-2 text-white bg-black rounded-full font-semibold baseline hover:bg-slate-600"> Learn more </a>
+            </button>
+            <footer class="flex flex-col items-center justify-around md:flex-row md:justify-between gap-8">
+              <div><img src="./assets/images/client-databiz.svg" alt="databiz logo" /></div>
+              <div><img src="./assets/images/client-audiophile.svg" alt="audidophile logo" /></div>
+              <div><img src="./assets/images/client-meet.svg" alt="meet logo" /></div>
+              <div><img src="./assets/images/client-maker.svg" alt="maker logo" /></div>
+            </footer>
+          </div>
+          <!-- Image -->
+          <div class="md:w-1/2"><img src="./assets/images/image-hero-mobile.png" alt="image" /></div>
+        </div>
+      </section>
+    </main>
 
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="text-white attribution mt-8 mx-auto">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a> Coded by
+      <a href="#" rel="noopener">Junier Bolívar © 2024</a>
+    </div>
+  </body>
 </html>
